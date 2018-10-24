@@ -1,0 +1,50 @@
+<html>
+<head>
+ <title>register page</title>
+<link rel="stylesheet" href="/static/css/login.css" />
+</head>
+<body >
+
+<table >
+    <form class="form-register" action="/regist/" method="post">
+    <tr>
+        <td >
+            邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:<input type="text" value="{{ form.email.value|default:'' }}" name="email" placeholder="输入常用邮箱" size="10">
+            <span style="color:red;"> {{form.email.errors}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="password"  value="{{ form.password.value|default:'' }}" name="password" placeholder="登录密码" size="10">
+            <span style="color:red;"> {{form.password.errors}}</span>
+        </td>
+     </tr>
+     <tr>
+        <td>
+            确认密码:<input type="password"  name="newpassword"placeholder="确认登录密码" size="10">
+            <span style="color:red;"> {{form.newpassword.errors}}</span>
+        </td>
+     </tr>
+     <tr>
+        <td>
+            联系电话:<input type="text"  value="{{ form.phone.value|default:'' }}" name="phone" placeholder="联系电话" size="10">
+            <span style="color:red;"> {{form.phone.errors}}</span>
+        </td>
+     </tr>
+    <tr>
+        <td>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="register-checkbox">
+            <input type="checkbox">  <a data-toggle="modal" href="#myModal" >同意注册协议</a>
+            <button type="submit" class="btn btn-primary ">注册</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/login/" class="btn btn-primary">已有账户。直接登录！</a>
+        </td>
+    </tr>
+
+ </form>
+</table>
+</body>
+</html>
