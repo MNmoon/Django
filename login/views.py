@@ -56,9 +56,12 @@ def login(request):
     return render_to_response('login/login.html', {'form': form});
 
 def index(request):
-
+    #get email from session 
     email =request.session.get('email')
-    return  render_to_response('login/index.html',{'email': email});
+    if email:
+        return  render_to_response('login/index.html',{'email': email});
+    else:
+        return HttpResponseRedirect('/login/')
 
 
 def logout(request):
