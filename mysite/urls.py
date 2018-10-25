@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^polls/', include('polls.urls')),
     url(r'^login/', include('login.urls')),
     url(r'^regist/', views.regist, name='regist'),
+    url(r'^index/', views.index, name='index'),   #method in views
     url(r'^admin/', admin.site.urls),
 ]

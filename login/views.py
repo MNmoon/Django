@@ -41,10 +41,11 @@ def login(request):
             password = form.cleaned_data['password']
             user = Register.objects.filter(email__exact=email, password__exact=password)
             if user:
+                #start session to record user info for index
                 request.session['email'] = email
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/index/')   #login success
             else:
-                return HttpResponseRedirect('/login/')
+                return HttpResponseRedirect('/login/')  #login fail
 
     else:
         form = loginForm()
@@ -55,7 +56,9 @@ def login(request):
     return render_to_response('login/login.html', {'form': form});
 
 def index(request):
-    pass
+
+    email =request.session.get('email')
+    return  render_to_response('login/index.html',{'email': email});
 
 
 def logout(request):

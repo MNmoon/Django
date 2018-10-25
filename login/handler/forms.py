@@ -25,7 +25,7 @@ class userForm(forms.Form):
         if password and newpassword:
             if password != newpassword:
                 msg = u"两个密码字段不一致。"
-                print '两个密码字段不一致'
+                print msg
         return cleaned_data
 
     def clean_email(self):
