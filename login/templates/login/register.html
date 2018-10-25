@@ -1,12 +1,13 @@
 <html>
 <head>
  <title>register page</title>
-<link rel="stylesheet" href="/static/css/login.css" />
+<link rel="stylesheet" href="/static/css/regist.css" />
 </head>
 <body >
 
 <table >
     <form class="form-register" action="/regist/" method="post">
+    {% csrf_token %}
     <tr>
         <td >
             邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:<input type="text" value="{{ form.email.value|default:'' }}" name="email" placeholder="输入常用邮箱" size="10">

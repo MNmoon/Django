@@ -1,6 +1,5 @@
-
 table {
-    width:500px;
+    width:400px;
     height:200px;
     border:10px solid red;
     margin:0px  auto;
@@ -11,8 +10,3 @@ body {
     margin-top:300px;
     background-image:url("/static/img/login.png")
 }
-input {
-    width:180px;
-    height:30px;
-}
-

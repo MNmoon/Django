@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.http import HttpResponseRedirect
 from .models import Register
-from login.handler.forms import userForm
+from login.handler.forms import userForm,loginForm
 from django.shortcuts import render_to_response
 
 '''
@@ -52,5 +52,11 @@ def login(request):
             csn = CaptchaStore.generate_key()
             cimageurl = captcha_image_url(csn)
             return HttpResponse(cimageurl)
-    return render_to_response('login1/login.html', {'form': form});
+    return render_to_response('login/login.html', {'form': form});
 
+def index(request):
+    pass
+
+
+def logout(request):
+    pass

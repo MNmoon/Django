@@ -8,6 +8,5 @@ from . import views
 app_name = 'login'
 urlpatterns = [
     # ex: /login/
-    url(r'^$', views.regist, name='login'),
     url(r'^$', views.login, name='login'),
 ]
