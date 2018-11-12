@@ -55,6 +55,15 @@ def login(request):
             return HttpResponse(cimageurl)
     return render_to_response('login/login.html', {'form': form});
 
+def changepwd(request):
+    #first verify old pwd
+    #second accept new pwd of new ,verify if they are the same
+    #third changepwd and redirect to login page
+    pass
+
+
+
+
 def index(request):
     #get email from session 
     email =request.session.get('email')
@@ -62,6 +71,14 @@ def index(request):
         return  render_to_response('login/index.html',{'email': email});
     else:
         return HttpResponseRedirect('/login/')
+
+def server_handler(request):
+    email = request.session.get('email')
+    if email:
+        return render_to_response('login/server_handler.html',{'email': email});
+    else:
+        return HttpResponseRedirect('/login/')
+
 
 
 def logout(request):

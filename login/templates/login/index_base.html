@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<head>
+<link rel="stylesheet" href="/static/css/index.css">
+</head>
+
+{% block startform %}
+{% endblock %}
+
+<div id="hd">
+    <h1 class="tit-layout">Test Center</h1>
+    <h5 align="right">Welcome:{{ email }}</h5>
+</div>
+<div id="bd">
+    <div id="side">
+        <ul>
+            <li title="server">
+                <a  href="server_handler.html" >server</a>
+            </li>
+            <li>
+                <a href="vehicle_handler.html">vehicle</a>
+            </li>
+        </ul>
+    </div>
+    <div id="main">
+        {% block main%}
+        {% endblock %}
+    </div>
+</div>
+
+<div id="ft">
+    @Ygomi.com
+</div>
+
+{% block endform %}
+{% endblock %}
+
+</body>
+</html>
